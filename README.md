@@ -1,36 +1,50 @@
-# TanStack Start - Basic Example
+# Payfazz OnCall Dashboard
 
-This is the basic TanStack Start example, demonstrating the fundamentals of building applications with TanStack Router and TanStack Start.
+A personal dashboard for monitoring and analyzing on-call issues. Built to help engineering teams track on-call workload, identify trends, and measure improvements over time.
 
-- [TanStack Router Docs](https://tanstack.com/router)
+## Features
 
-It's deployed automagically with Netlify!
+- **CSV Import** - Upload Jira CSV exports to analyze on-call data
+- **Monthly Filtering** - View data by specific month or all-time
+- **Month-to-Month Comparison** - Track changes vs previous month with regression highlighting
+- **Issue Distribution** - Pie chart showing issues by label
+- **Time Tracking** - Bar chart showing hours spent per label
+- **Multi-Month Trends** - Line chart showing issues and hours over time
+- **Resolution Time Analysis** - Average time to resolve issues by label
+- **Top Time-Consuming Issues** - Identify issues that took the most effort
 
-- [Netlify](https://netlify.com/)
+## Supported Format
 
-## Start a new project based on this example
-
-To start a new project based on this example, run:
-
-```sh
-npx gitpick TanStack/router/tree/main/examples/react/start-basic start-basic
-```
+This dashboard supports **Jira CSV exports** with the following required columns:
+- Issue Type
+- Key
+- Summary
+- Assignee
+- Created
+- Updated
+- Labels
+- Σ Time Spent
 
 ## Getting Started
 
-From your terminal:
-
 ```sh
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+Open http://localhost:3000 and upload your Jira CSV export.
 
 ## Build
 
-To build the app for production:
-
 ```sh
-pnpm build
+bun run build
+bun run start
 ```
+
+## Tech Stack
+
+- TanStack Start / TanStack Router
+- React 19
+- Tailwind CSS v4
+- Recharts
+- TypeScript
